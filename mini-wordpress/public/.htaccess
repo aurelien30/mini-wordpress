@@ -1,0 +1,10 @@
+# Active le mode rewrite
+RewriteEngine On
+
+# Redirige toutes les requêtes vers index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [QSA,L]
+
+#QSA : Query String Append (garde les paramètres GET)
+#L : Last (dernière règle)
